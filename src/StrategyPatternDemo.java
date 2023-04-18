@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class StrategyPatternDemo {
 
@@ -10,7 +7,7 @@ public class StrategyPatternDemo {
 
         final int SIZE = 10_000_000;
         List<Person> objects = new ArrayList<>();
-        System.out.println("Loading Movies into list...");
+        System.out.println("Loading Persons into list...");
 
         Random random = new Random();
         for (int i = 0; i < SIZE; i++) {
@@ -29,15 +26,14 @@ public class StrategyPatternDemo {
         System.out.println("Time elapsed: " + (System.currentTimeMillis()-start) + " ms");
 
         System.out.println("Search result (Sequential Search): " + result);
-        System.out.println("wanted was: " + wanted);
 
         System.out.println("-------------------------------------------------------");
 
         Search binSearch = new Search(new BinarySearch());
         long startTime = System.currentTimeMillis();
 
-        //Collections.shuffle(objects);
 
+        //Collections.shuffle(objects);
         Collections.sort(objects);
         long sortTime = System.currentTimeMillis() - startTime;
         System.out.println("Binary sort time is: " + sortTime + "ms");
@@ -49,6 +45,24 @@ public class StrategyPatternDemo {
         System.out.println("Time elapsed: " + (System.currentTimeMillis()-start) + " ms");
         System.out.println("Search result (Binary Search): " + result);
 
+
+
+
+/*
+        HashMap<Object, Object> personMapGrand = new HashMap<>();
+
+        Random randy = new Random();
+        for (int i = 0; i < 1000; i++) {
+            String name = "Person " + i;
+
+            int phone = randy.nextInt(10000000,99999999);
+            Person person = new Person(name, phone);
+            personMapGrand.put(name, person);
+            System.out.println(personMapGrand);
+        }
+        List<Person, phone> personListGrand = HashMap.asList(personMapGrand);
+        for(Person person : personListGrand)
+        System.out.println(person);*/
 
 }
 
