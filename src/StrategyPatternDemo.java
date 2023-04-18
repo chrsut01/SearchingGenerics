@@ -23,9 +23,9 @@ public class StrategyPatternDemo {
     long start = System.currentTimeMillis();
 
     Person result = seqSearch.doSearch(objects, wanted);
-        System.out.println("Time elapsed: " + (System.currentTimeMillis()-start) + " ms");
+        System.out.println("Time elapsed for Sequential Search: " + (System.currentTimeMillis()-start) + " ms");
 
-        System.out.println("Search result (Sequential Search): " + result);
+        System.out.println("Search result: " + result);
 
         System.out.println("-------------------------------------------------------");
 
@@ -36,14 +36,14 @@ public class StrategyPatternDemo {
         //Collections.shuffle(objects);
         Collections.sort(objects);
         long sortTime = System.currentTimeMillis() - startTime;
-        System.out.println("Binary sort time is: " + sortTime + "ms");
+        System.out.println("(Binary sort time is: " + sortTime + "ms)");
 
 
     start = System.currentTimeMillis();
 
     result = binSearch.doSearch(objects, wanted);
-        System.out.println("Time elapsed: " + (System.currentTimeMillis()-start) + " ms");
-        System.out.println("Search result (Binary Search): " + result);
+        System.out.println("Time elapsed for Binary Search: " + (System.currentTimeMillis()-start) + " ms");
+        System.out.println("Search result: " + result);
 
 
 
