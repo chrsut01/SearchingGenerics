@@ -4,8 +4,11 @@ public class StrategyPatternDemo {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an amount between 1,000 and 40,000,000: ");
+        int SIZE = scanner.nextInt();
 
-        final int SIZE = 10_000_000;
+        //final int SIZE = 10_000_000;
         List<Person> objects = new ArrayList<>();
         System.out.println("Loading Persons into list...");
 
@@ -23,7 +26,7 @@ public class StrategyPatternDemo {
     long start = System.currentTimeMillis();
 
     Person result = seqSearch.doSearch(objects, wanted);
-        System.out.println("Time elapsed for Sequential Search: " + (System.currentTimeMillis()-start) + " ms");
+        System.out.println("Time elapsed for Sequential Search with " + SIZE + " elements is:  " + (System.currentTimeMillis()-start) + " ms");
 
         System.out.println("Search result: " + result);
 
@@ -42,7 +45,7 @@ public class StrategyPatternDemo {
     start = System.currentTimeMillis();
 
     result = binSearch.doSearch(objects, wanted);
-        System.out.println("Time elapsed for Binary Search: " + (System.currentTimeMillis()-start) + " ms");
+        System.out.println("Time elapsed for Binary Search with " + SIZE + " elements is:  " + (System.currentTimeMillis()-start) + " ms");
         System.out.println("Search result: " + result);
 
 
