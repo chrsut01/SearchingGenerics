@@ -4,7 +4,6 @@ public class Person implements Comparable<Person>{
 
     String name;
     int phone;
-    String email;
 
     public Person(String name, int phone) {
         this.name = name;
@@ -26,6 +25,10 @@ public class Person implements Comparable<Person>{
                 && Objects.equals(name, person.name);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phone);
+    }
 
     public String getName() {
         return name;
